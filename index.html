@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html dir="LTR" lang="en">
+<head>
+<title>Mobile Ticket(s) | CM Tickets</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, nocache, nosnippet, noarchive" />
+<meta name="color-scheme" content="only light">
+<link href="https://cdn.cm.com/icons/favicon-32x32.png" rel="icon">
+<link href="https://cdn.cm.com/icons/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="https://cm.com/app/aurora/css/v2/aurora.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" rel="stylesheet" integrity="sha384-CJQSN6CA3z5OVc/qSI6TshBeGLtmNjyDB88eF8uMvXxq57fTDs+wHKKDHFtulEMD" crossorigin="anonymous">
+<style>
+            body:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                max-width: 100vw;
+                padding-top: 100px;
+                z-index: -1;
+                height: 214px;
+            }
+
+            .container:not([class*='p-t-']):not([class*='m-t-']) {
+                padding-top: 0px;
+            }
+
+            @media (min-width: 609px) {
+
+                body:after {
+                    content: none;
+                }
+            }
+
+            .container {
+                margin-top: 0;
+                min-height: calc(100vh - 120px)
+            }
+
+            .container .main-content {
+                padding: 20px;
+                background-color: #ebecee;
+                border-radius: 16px;
+            }
+
+            @media (max-width: 608px) {
+                body>.container {
+                    max-width: calc( 100% - 24px);
+                }
+            }
+
+            .logo {
+                height: 75px;
+                width: auto;
+                vertical-align: top;
+            }
+
+            .container h2.page-title {
+                color: #101e1e;
+                padding-left: 2px;
+                margin-bottom: 16px;
+                margin-top: 16px;
+                text-align: left;
+            }
+
+            @media (max-width: 768px) {
+                .container h2.page-title {
+                    text-align: center;
+                }
+            }
+
+            .mobile-banner-logo {
+                display: none;
+            }
+
+            .default-banner-logo {
+                display: block;
+            }
+
+            .main-content {
+                -webkit-box-shadow: 0 32px 48px -8px rgba(16,30,30,.5)!important;
+                box-shadow: 0 32px 48px -8px rgba(16,30,30,.5)!important;
+            }
+
+            .footer {
+                height: 85px;
+                padding: 0 8px 16px 8px;
+            }
+
+            .footer .text-center {
+                margin-right: auto;
+                margin-left: auto;
+                max-width: calc(100% - 40px);
+                justify-content: center;
+            }
+
+            .footer .text-center p {
+                margin-left: 8px;
+                text-align: left;
+            }
+
+            .cm-small-logo {
+                width: 175px;
+                height: 60px;
+                margin-left: 24px;
+                display: block;
+                                    margin-top: 8px;
+                            }
+
+            dt {
+                font-weight: 700;
+            }
+
+            dd {
+                margin-bottom: .5rem;
+                margin-left: 0;
+            }
+
+            ul {
+                list-style: circle;
+                margin: 0;
+                padding: 0 16px;
+            }
+
+            .line-height-100{
+                line-height: 100%
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            .container:not([class*='p-t-']):not([class*='m-t-']){
+                 padding-top: 0 !important;
+            }
+
+            .content-wrapper, .header-wrapper{
+                width:100%;
+            }
+
+            .card-wrapper{
+                position:relative;
+                border: 2px solid #ffffff;
+                border-radius:20px;
+            }
+
+            .header-wrapper{
+                min-height:60px;
+                position:relative;
+                /*background: #fff;*/
+                /*border-top-left-radius: 16px;*/
+                /*border-top-right-radius: 16px;*/
+            }
+
+            .content-wrapper {
+               /*margin-top: 10px;*/
+            }
+
+            .cm-icon.success {
+                color: #00bd97;
+            }
+
+            .form-group .form-input .form-control:not(textarea), .form-group .form-search .form-control:not(textarea), .form-group .form-input-special .form-control:not(textarea) {
+                background: white !important;
+            }
+
+            .form-group .form-input-validation .form-input-notes-left {
+                width: 100% !important;
+            }
+
+            .form-input-validation .form-input-notes-left.error {
+                color: #ff4040 !important;
+            }
+
+            @media(min-width: 984px) {
+                .footer .text-center {
+                    max-width: 960px;
+                }
+            }
+
+                    </style>
+<style>
+        .cl-white {
+            color: #ffffff;
+        }
+
+        h2.heading-ticket{
+            line-height: 28px;
+            margin-top: 16px;
+        }
+
+        h3.sub-heading-ticket{
+            line-height: 24px;
+        }
+
+        .bg-cm-gradient{
+            background: transparent;
+        }
+
+        .main-content {
+            background: url('https://api.ticketing.cm.com/ticketingresourceapi/v1.0/resource/2a429b3e-ba04-4921-b762-f32dbd52c02d/content') no-repeat !important;
+            background-size: cover !important;
+            background-position: 50% !important;
+            padding: 0 !important;
+                            }
+
+        .container-ticket-outer {
+            border-right: 1px dashed transparent;
+            border-left: 1px dashed transparent;
+            border-radius: 16px;
+        }
+
+        .container-ticket-outer::before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            bottom: -20px;
+            height: calc(20px * 2);
+            width: 20px;
+            border-bottom-right-radius: 40px;
+            border-top-right-radius: 40px;
+            background: transparent;
+            display: inline-block;
+        }
+
+        .container-ticket-outer::after {
+            content: "";
+            position: absolute;
+            left: 0px;
+            top: -20px;
+            height: calc(20px * 2);
+            width: 20px;
+            border-bottom-right-radius: 40px;
+            border-top-right-radius: 40px;
+            background: transparent;
+            display: inline-block;
+        }
+
+        .container-ticket-inner::before {
+            content: "";
+            position: absolute;
+            right: 0px;
+            bottom: -20px;
+            height: calc(20px * 2);
+            width: 20px;
+            border-bottom-left-radius: 40px;
+            border-top-left-radius: 40px;
+            background: transparent;
+            display: inline-block;
+        }
+
+        .container-ticket-inner::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            top: -20px;
+            height: calc(20px * 2);
+            width: 20px;
+            border-bottom-left-radius: 40px;
+            border-top-left-radius: 40px;
+            background: transparent;
+            display: inline-block;
+        }
+
+        .mobile-banner-logo {
+            display: block;
+            background: url('https://cdn.cm.com/cm/cm-com.png') no-repeat;
+        ;
+            ;
+            background-size: contain;
+        }
+
+        .default-banner-logo {
+            display: none;
+        }
+
+        .code-container {
+            display: inline-block;
+            padding: 15px;
+            border-radius: 10px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAAAA6fptVAAAACklEQVR4nGP6DwABBQECz6AuzQAAAABJRU5ErkJggg==");
+            background-repeat: repeat;
+            background-size: cover;
+            background-color: #fff;
+        }
+
+        .code-container.c128{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .p-8 {
+            padding: 8px;
+        }
+
+        .p-10 {
+            padding: 10px;
+        }
+
+        .p-15 {
+            padding: 15px;
+        }
+
+        .list-ticket-info {
+            font-size: 13px;
+        }
+
+        .swiper-container {
+                            background-color: rgba(0, 0, 0, 0.5) !important;
+                border-radius: 16px;
+            ;
+            width: 100%;
+            padding: 16px;
+        }
+
+        .swiper-wrapper {
+            height: auto !important;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: none;
+        }
+
+        .swiper-button-next.swiper-button-disabled,
+        .swiper-button-prev.swiper-button-disabled {
+            opacity: 0;
+        }
+
+        @media (min-width: 768px) {
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                display: block;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #007FFF;
+        }
+
+        .add-to-wallet-button {
+            background-size: cover;
+            background-color: transparent;
+            border: none;
+            width: 161px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .container-apple-wallet {
+            left:-50%;
+            position: relative;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        .container-barcode-apple-wallet {
+            position: relative;
+            left: 50%;
+        }
+
+        .sub-heading-ticket {
+            font-weight: lighter;
+        }
+
+        .download-pdf-button {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .download-pdf-button span {
+            display: inline-block;
+            margin-left: 5px;
+            color: #84ABF0;
+        }
+
+        .barcode-info {
+            display: block;
+            font-weight: bold;
+            color: #101e1e;
+        }
+
+        @media (max-width: 608px) {
+            .container {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+    </style>
+</head>
+<body id="body" class="typography-v2">
+<script>
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
+
+
+
+
+
+
+</script>
+
+<form class="form" action="index.html">
+<label for="prestand">Kies een vooringevulde stand:</label>
+<select id="prestand" name="prestand">
+  <option value=""></option>
+  <option value="Arena Grandstand 1 - 1220">Arena Grandstand 1 - 1220</option>
+  <option value="Tarzan in Grandstand 2 - 140 / 141">Tarzan in Grandstand 2 - 140 / 141</option>
+  <option value="Tarzan in Grandstand 1 - 144 / 145">Tarzan in Grandstand 1 - 144 / 145</option>
+  <option value="Ben Pon Grandstand 2 - 103 / 104">Ben Pon Grandstand 2 - 103 / 104</option>
+  <option value="Arena Grandstand 2 - 1204">Arena Grandstand 2 - 1204</option>
+  <option value="Arena Grandstand 2 - 1209 / 1210">Arena Grandstand 2 - 1209 / 1210</option>
+  <option value="Arena Grandstand 1 - 1211 / 1212">Arena Grandstand 1 - 1211 / 1212</option>
+  <option value="Arena Grandstand 1 - 1213 / 1214">Arena Grandstand 1 - 1213 / 1214</option>
+  <option value="Pit Grandstand - 130 / 131">Pit Grandstand - 130 / 131</option>
+  <option value=""></option>
+
+  
+  </select><br />
+<label for="stand">Kies handmatig een stand:</label>
+<select id="stand" name="stand">
+  <option value="Hairpin Grandstand 1">Hairpin Grandstand 1</option>
+  <option value="Hairpin Grandstand 2">Hairpin Grandstand 2</option>
+  <option value="Eastside Grandstand 1">Eastside Grandstand 1</option>
+  <option value="Eastside Grandstand 2A">Eastside Grandstand 2A</option>
+  <option value="Eastside Grandstand 2B">Eastside Grandstand 2B</option>
+  <option value="Eastside Grandstand 3">Eastside Grandstand 3</option>
+  <option value="Eastside Grandstand 4">Eastside Grandstand 4</option>
+  <option value="Arena In Grandstand 1">Arena In Grandstand 1</option>
+  <option value="Arena In Grandstand 2">Arena In Grandstand 2</option>
+  <option value="Arena Grandstand 1">Arena Grandstand 1</option>
+  <option value="Arena Grandstand 2">Arena Grandstand 2</option>
+  <option value="Arena Grandstand 3">Arena Grandstand 3</option>
+  <option value="Arena Out Grandstand">Arena Out Grandstand</option>
+  <option value="Ben Pon Grandstand 1">Ben Pon Grandstand 1</option>
+  <option value="Ben Pon Grandstand 2">Ben Pon Grandstand 2</option>
+  <option value="Main Grandstand">Main Grandstand</option>
+  <option value="Pit Grandstand">Pit Grandstand</option>
+  <option value="Tarzan in Grandstand 1, Tarzan in Grandstand 1">Tarzan in Grandstand 1</option>
+  <option value="Tarzan in Grandstand 2, Tarzan in Grandstand 2">Tarzan in Grandstand 2</option>
+  <option value="Tarzan in Grandstand 3, Tarzan in Grandstand 3">Tarzan in Grandstand 3</option>
+</select>
+<br />
+<label for="nummer">Tribune nummer:</label>
+<input type="text" class="nummer1" id="nummer1" name="nummer1"> - <input type="text" class="nummer2" id="nummer2" name="nummer2">
+<br />
+
+<label for="naam">Kies een naam:</label>
+<select id="naam" name="naam">
+  <option value="Mike de Landgraaf">Mike</option>
+  <option value="Joep van Velzen">Joep</option>
+  <option value="Dave Reus">Dave</option>
+  <option value="Rick Schouten">Rick</option>
+  <option value="Rene Swart">Rene</option>
+  <option value="Chris Wagenaar">Chris</option>
+  <option value="Jacco Wagenaar">Jacco</option>
+  <option value="Mark Vlaar">Mark</option>
+  <option value="Barry Schouten">Barry</option>
+  <option value="anders">Anders..</option>
+</select>
+<input type="text" class="anders" id="anders" name="anders">
+<br />
+
+<input type="submit" value="Ok">
+</form>
+
+
+
+
+
+
+
+
+<div class="container">
+<header class="row">
+<div class="col-12">
+<h2 class="page-title">
+<div class="logo mobile-banner-logo"></div>
+<img class="logo default-banner-logo" src="content.png" width="50" height="50" alt="CM logo">
+</h2>
+</div>
+</header>
+<main class="row">
+<div class="col-12 main-content">
+<div class="swiper-container">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<div class="bg-cm-gradient p-15 container-ticket-outer">
+<div class="p-10 container-ticket-inner">
+<div class="container-barcode">
+<div class="text-center container-image">
+<div class="code-container qrcode">
+<img src="data:image/png;base64,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" class="barcode">
+<span class="barcode-info">336252479662</span>
+</div>
+</div>
+</div>
+<h3 class="cl-white heading-ticket">Dutch Grand Prix Passe Partout 2022 (FRI/SAT/SUN)</h3>
+<h4 class="cl-white sub-heading-ticket">
+Regulier<br>
+<span class="prestandticket">
+<span class="standticket"></span> - <span class="nummerticket"></span>
+</span>
+</h4>
+<dl class="cl-white list-ticket-info">
+<dd style="margin-bottom: 0;">Seat 96,
+Row 10</dd>
+<dd>Gate 2 / Gate 4</dd>
+<dt class="naamticket"></dt>
+<dd>ST84FDE94E7A</dd>
+</dl>
+<div class="container-barcode-apple-wallet">
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="swiper-pagination swiper-pagination-white"></div>
+<div class="swiper-button-prev swiper-button-white"></div>
+<div class="swiper-button-next swiper-button-white"></div>
+</div>
+</div>
+</main>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","licenseKey":"NRJS-7f90a4e5e92cd8a2f2b","applicationID":"500477424","transactionName":"MhBSZQoZX0RVWhZeXQtac0QLDF5aG3gSR24tAURBJDteWUBLDVteAAdDbTcKVVJGeg1ZRhcaXF0dCnFQUU0tRVYABw==","queueTime":0,"applicationTime":197,"atts":"HldFE0IDTBsWWEANSRgI","errorBeacon":"bam.eu01.nr-data.net","agent":""}</script><script>(function(){window['__CF$cv$params']={r:'74237c550ab0b761',m:'uFiogrtmHHBIKaG3AOlvJkN3KjL8VkJJtZcyod4mpzY-1661757223-0-AVeC8fwFxBnZagcBhNTIwCNlMFXR+ddHYPeCrMp3KKzvX55NgraZnl1knHDW2454buuythSBqinqIZE/KCnFMrQLA27Myi9mTJqeuqbMJk7ITLxAtZRzYBaXyKviKISDZ1+NIJTvY3oKCItNTbJXar31g+WbiwI9JRWckQUgAySqMoQniNcFUyN5ZiQZZHn4MIz3lkaOsR85egG97npf8snXRJVgnrJxFCGs2rSQBiQVr6ZmeUYPAm6KVBE78PHS/knQebjDz3dmeVXnAWaBH9SngSSlLM8kp8a1DZWPnd2onHa7RAK5TEIWI8uBuTfC9ahN1LKHlRffMeiy5jOz5lYjoIq5AYizowRwxBu0Rr4m',s:[0x727cb17d94,0x570c3ef9ba],}})();</script></body>
+<footer class="footer">
+<div class="row">
+<div class="col-12">
+<img src="https://cdn.cm.com/cm/cm-com.png" class="cm-small-logo" style="margin: 0 auto">
+</div>
+<div class="col-12 ">
+<p class="text-center">
+Copyright © <a href="https://www.cm.com" target="_blank" rel="noopener">CM.com</a> 2022.<br>
+Do you need any help? <a href="index.html">Support</a><br>
+PDF version instead? <a href="#">PDF</a>
+</p>
+</div>
+</div>
+</footer>
+<script>
+if(getUrlParameter('stand')){
+$(".form").hide()
+}
+
+if(getUrlParameter('stand')<1){
+$(".container").hide()
+}
+if(getUrlParameter('prestand').length>1){
+
+$(".prestandticket").html(getUrlParameter('prestand').replace(/\+/g, ' '));
+
+} else {
+
+if(getUrlParameter('stand')){
+$(".standticket").append(getUrlParameter('stand').replace(/\+/g, ' '));
+}
+
+if(getUrlParameter('anders').length>1){
+$(".naamticket").append(getUrlParameter('anders').replace(/\+/g, ' '));
+} else {
+$(".naamticket").append(getUrlParameter('naam').replace(/\+/g, ' '));
+}
+if(getUrlParameter('nummer2').length > 2){
+$(".nummerticket").append(getUrlParameter('nummer1')+" / "+getUrlParameter('nummer2'));
+} else {
+$(".nummerticket").append(getUrlParameter('nummer1'));
+}
+}
+
+
+</script>
+
+<script data-language="en">
+        (function(script){
+            window.isIE = /*@cc_on!@*/false || !!document.documentMode;
+            window.language = $(script).data('language');
+            $.ajaxSetup({type: 'POST'});
+
+            $.objectifyForm = function (formArray) {
+
+                let returnArray = {};
+
+                for (let i = 0; i < formArray.length; i++){
+                    returnArray[formArray[i]['name']] = formArray[i]['value'];
+                }
+                return returnArray;
+            };
+
+            $.toggleLoadingButton = function(button){
+                if (button.is(':disabled')){
+                    button.prop('disabled', false);
+                } else {
+                    button.prop('disabled', true);
+                }
+            };
+
+            $.replaceUrlParam = function (url, key, value) {
+                key = encodeURI(key);
+                value = encodeURI(value);
+
+                var urlParts = url.split('?');
+                var params = key + "=" + value;
+
+                if (urlParts.length>1) {
+                    var kvp = urlParts[1].split('&');
+
+                    var i=kvp.length; var x; while(i--) {
+                        x = kvp[i].split('=');
+
+                        if (x[0]==key)
+                        {
+                            x[1] = value;
+                            kvp[i] = x.join('=');
+                            break;
+                        }
+                    }
+
+                    if(i<0) {kvp[kvp.length] = [key,value].join('=');}
+
+                    params = kvp.join('&');
+                }
+                return urlParts[0] + '?' + params;
+            }
+
+            $.resetFormInputs = function (form) {
+                $('#' + form.attr('id') + ' input, #' + form.attr('id') + ' cm-select').each(function(key, input){
+
+                    let formInputDiv = $(this).parent();
+                    if ($(input).attr('data-name') == 'country_id' || $(input).attr('data-name') == 'custom_field_1' || $(input).attr('data-name') == 'custom_field_2' || $(input).attr('data-name') == 'custom_field_3') {
+                        $(input).removeAttr("data-error");
+                    } else {
+                        if ($(input).attr('name') == 'gender') {
+                            formInputDiv = formInputDiv.closest('.row');
+                            formInputDiv.find(".form-input-validation").find(".form-input-notes-left").removeClass("error");
+                        } else if ($(input).attr('name') == 'mobile') {
+                            formInputDiv = formInputDiv.closest('.mobile-input');
+                            formInputDiv.removeClass("error");
+                        } else {
+                            formInputDiv = formInputDiv.closest('.form-input');
+                            formInputDiv.removeClass("error");
+                        }
+                        formInputDiv.find(".form-input-validation").addClass("d-none");
+                        formInputDiv.find(".form-input-validation").find(".form-input-notes-left").prop('title', '').html('');
+                    }
+                });
+            };
+
+            $.resetFormKeyPress = function () {
+                $('form').each(function (key, form) {
+                    $(form).on('keyup keypress', function(e) {
+                        let keyCode = e.keyCode || e.which;
+                        if (keyCode === 13) {
+                            e.preventDefault();
+                            return false;
+                        }
+                    });
+                })
+            };
+
+            $.resetFormKeyPress();
+
+            Array.prototype.first = function (n) {
+                if (!arguments.length) {
+                    return this[0];
+                } else {
+                    return this.slice(0, Math.max(0, n));
+                }
+            };
+
+            Array.prototype.last = function (n) {
+                if (!arguments.length) {
+                    return this[this.length - 1];
+                } else {
+                    return this.slice(Math.max(0, this.length - n));
+                }
+            };
+
+        })(document.currentScript);
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js" integrity="sha384-lcAc0/KxNDMT/J5sqoqj8zGDnNIiWGb5rzPNzBrDdYUhbqBAXZIT9iNq8UEKJcyq" crossorigin="anonymous"></script>
+<script>
+        $(document).ready(function () {
+            var orderPage = (function () {
+                var swiperWrapper = $('.swiper-wrapper');
+                var cmBlock = $('.cm-block');
+                var ticketTypeButtons = $('.add-to-wallet-button, .download-pdf-button');
+
+                return {
+                    init: init
+                };
+
+                function setSwiper() {
+                    var tSwiper = new Swiper('.swiper-container', {
+                        direction: 'horizontal',
+                        loop: false,
+                        pagination: {
+                            el: '.swiper-pagination',
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        keyboardControl: true
+                    });
+                }
+
+                function setSwiperHeight() {
+                    swiperWrapper.height((
+                        cmBlock.height() + 10
+                    ));
+                }
+
+                function switchTicketFormat() {
+                    ticketTypeButtons.on('click', function () {
+                        var type = $(this).data('ticket-format');
+                        var barcode = $(this).data('ticket-barcode');
+                        var url = $.replaceUrlParam(window.location.href, 'a', type);
+
+                        if (barcode) url = $.replaceUrlParam(url, 'bc', barcode);
+                        window.location = url;
+                    });
+                }
+
+                function init() {
+                    setSwiper();
+                    setSwiperHeight();
+                    switchTicketFormat();
+                }
+            })();
+
+            orderPage.init();
+        });
+    </script>
+<cm-overlay></cm-overlay>
+</html>
