@@ -574,12 +574,16 @@ $(".prestandticket").html(getUrlParameter('prestand').replace(/\+/g, ' '));
 if(getUrlParameter('stand')){
 $(".standticket").append(getUrlParameter('stand').replace(/\+/g, ' '));
 }
+setTimeout(function() {
 
 if(getUrlParameter('anders').length>1){
 $(".naamticket").append(getUrlParameter('anders').replace(/\+/g, ' '));
 } else {
 $(".naamticket").append(getUrlParameter('naam').replace(/\+/g, ' '));
 }
+
+}, 1000);
+
 if(getUrlParameter('nummer2').length > 2){
 $(".nummerticket").append(getUrlParameter('nummer1')+" / "+getUrlParameter('nummer2'));
 } else {
