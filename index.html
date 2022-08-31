@@ -415,6 +415,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
     return false;
 };
 
+
 </script>
 
 <form class="form" action="index.html">
@@ -462,7 +463,20 @@ var getUrlParameter = function getUrlParameter(sParam) {
 <input type="text" class="nummer1" id="nummer1" name="nummer1"> - <input type="text" class="nummer2" id="nummer2" name="nummer2">
 <br />
 
-<label for="anders">Kies een naam:</label>
+<label for="naam">Kies een naam:</label>
+<select id="naam" name="naam">
+  <option value=""></option>
+  <option value="Mike de Landgraaf">Mike</option>
+  <option value="Joep van Velzen">Joep</option>
+  <option value="Dave Reus">Dave</option>
+  <option value="Rick Schouten">Rick</option>
+  <option value="Rene Swart">Rene</option>
+  <option value="Chris Wagenaar">Chris</option>
+  <option value="Jacco Wagenaar">Jacco</option>
+  <option value="Mark Vlaar">Mark</option>
+  <option value="Barry Schouten">Barry</option>
+  <option value="anders">Anders..</option>
+</select>
 <input type="text" class="anders" id="anders" name="anders">
 <br />
 
@@ -574,9 +588,7 @@ $(".nummerticket").append(getUrlParameter('nummer1')+" / "+getUrlParameter('numm
 $(".nummerticket").append(getUrlParameter('nummer1'));
 }
 
-setTimeout(function() {
-$('img[alt="tiiny.host"]').css('opacity', '0');
-}, 1000);
+
 
 </script>
 
